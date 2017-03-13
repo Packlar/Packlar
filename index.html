@@ -21,104 +21,27 @@
 		<script type="text/javascript">
 		var pack=["https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/pack-black_orig.png", "https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/pack-blue-1_orig.png", "https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/pack-red_orig.png", "https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/pack-yellow_orig.png", "https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/pack-purple_orig.png"];
 		
-		var straps=["https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/strap-black-1_orig.png", "https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/strap-blue_orig.png", "https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/strap-red_orig.png", "https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/strap-yellow-1_orig.png", "https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/strap-blue_orig.png"];;
+		var straps=["https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/strap-black-1_orig.png", "https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/strap-blue_orig.png", "https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/strap-red_orig.png", "https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/strap-yellow-1_orig.png", "https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/strap-blue_orig.png"];
 
 		var var1=0;
 		var var2=0;
 		var var3=0;
-		
-		function show_image(src, width, height, alt) {
-			var img = document.createElement("img");
-			img.src = src;
-			img.width = width;
-			img.height = height;
-			img.alt = alt;
-			document.body.appendChild(img);
-		}
-		
-		var img = new Image();
-		var div = document.getElementById('foo');
- 
-		img.onload = function() {
-		div.appendChild(img);
-		};
- 
-		img.src = 'path/to/image.jpg' 
 
-//		$(".shownPack").hide();
+		$(document).ready(function(){
+			$("h1").append(<h1>testing</h1>);
+			$(".showMe").click(function(){
+				$mainColor=$('input[name="mainColors"]:checked').val();
+				if($mainColor!==null){
+					$(".showArea").empty();
+					$(".showArea").append(<h3>Here's your pack</h3>);
+					$(".showArea").append(<img src=pack[$mainColor]>);
+				}
+				else{
+					alert("this isn't working");
+				}
+			});
+		});
 
-		$(".reveal").on("click", function() {
-			maincolor();
-			strapcolor();
-		}
-		
-/*		$(".reveal").on("click", function() {
-			switch($(".materials")){
-				case "nylon":
-					var1=0;
-					maincolor();
-					strapcolor();
-					break;
-				case "cordura":
-					var1=1;
-					maincolor();
-					strapcolor();
-					break;
-				case"cotton":
-					var1=2;
-					maincolor();
-					strapcolor();
-					break;
-				default:
-					//print "You did not select a material"
-			}
-		}
-*/
-		function maincolor(){
-			switch($(".mainColors")){
-				case "black":
-					//display packs[var1, 1]
-					break;
-				case "blue":
-					//display packs[var1, 2]
-					break;
-				case "red":
-					//display packs[var1, 3]
-					break;
-				case "yellow":
-					//display packs[var1, 4]
-					break;
-				case "purple":
-					//display packs[var1, 5]
-					break;
-				default
-					//print "You did not select a color for your backpack"
-			}
-		}
-
-
-		function strapcolor(){
-			switch($(".strapColors")){
-				case "black":
-					//display straps[var1, 1]
-					break;
-				case "blue":
-					//display straps[var1, 2]
-					break;
-				case "red":
-					//display straps[var1, 3]
-					break;
-				case "yellow":
-					//display straps[var1, 4]
-					break;
-				case "purple":
-					//display straps[var1, 5]
-					break;
-				default
-					//print "You did not select a color for your straps"
-			}
-			
-		}
 		</script>
 	</head>
 	<body>
@@ -129,16 +52,12 @@
 		<p>Packlar is a customizable expandable backpack. Make your pack your very own with our backpack creator.</p>
 <!--This is where the customizer starts-->        
          <div class="customizer">
-<!--           <h3 class="question">What material would you like your backpack to be made out of?</h3>
-           <input type="radio" name="materials" value="nylon" id="materialNylon"><label for="materialNylon">Ripstop Nylon</label><br>
-           <input type="radio" name="materials" value="cordura" id="materialCordura"><label for="materialCordura">Cordura</label><br>
-           <input type="radio" name="materials" value="cotton" id="materialCotton"><label for="materialCotton">Cotton</label><br>-->
            <h3 class="question">What color would you like your backpack to be?</h3>
            <input type="radio" name="mainColors" value="black" id="MainColorBlack"><label for="MainColorBlack">Black</label><br>
            <input type="radio" name="mainColors" value="blue" id="MainColorBlue"><label for="MainColorBlue">Blue</label><br>
            <input type="radio" name="mainColors" value="red" id="MainColorRed"><label for="MainColorRed">Red</label><br>
-           <input type="radio" name="mainColors" value="yellow" id="MainColorYellow"><label for="MainColorYellow">Yellow</label><br>
-           <input type="radio" name="mainColors" value="purple" id="MainColorPurple"><label for="MainColorPurple">Purple</label><br>		
+           <input type="radio" name="mainColors" value="green" id="MainColorYellow"><label for="MainColorYellow">Yellow</label><br>
+           <input type="radio" name="mainColors" value="maroon" id="MainColorPurple"><label for="MainColorPurple">Purple</label><br>		
            <h3 class="question">What color would you like the straps on your your backpack to be?</h3>
            <input type="radio" name="strapColors" value="black" id="StrapColorBlack"><label for="StrapColorBlack">Black</label><br>
            <input type="radio" name="strapColors" value="blue" id="StrapColorBlue"><label for="StrapColorBlue">Blue</label><br>
@@ -147,18 +66,9 @@
            <input type="radio" name="strapColors" value="purple" id="StrapColorPurple"><label for="StrapColorMaroon">Purple</label><br>		
           </div>
           <div id="reveal">
-            <!--add variable/logic to onclick-->
-            <input type="button" onclick="" value="Show me my pack">
+            <button>Show me my pack</button>
           </div>
-<!--          <div class="shownPack">-->
-            <!--add variable/logic to onclick-->
-<!--            <h3>Here's your pack</h3>-->
-            <!--add pack picture here-->
-<!--            <img id="pack" src="">-->
-            <!--add straps picture here-->
-<!--            <img id="straps" src="">
-            <input type="button" onclick="" value="I want to change my pack">
-          </div>-->
+		  <div id="showArea"></div>
 <!--This is where the customizer ends-->            
 		<h2>Contact Us</h2>
         <p>backpacklar@gmail.com</p>
