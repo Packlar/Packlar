@@ -34,19 +34,19 @@
 					$("#showArea").append("<h3>Here's your pack</h3>");
 						switch($mainColor){
 							case "black":
-								$("#showArea").append("<img src='https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/pack-black_orig.png'>");
+								$("#showArea").append("<img z-index=1 src='https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/pack-black_orig.png'>");
 							break;
 							case "blue":
-								$("#showArea").append("<img src='https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/pack-blue-1_orig.png'>");
+								$("#showArea").append("<img z-index=1 src='https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/pack-blue-1_orig.png'>");
 							break;
 							case "red":
-								$("#showArea").append("<img src='https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/pack-red_orig.png'>");
+								$("#showArea").append("<img z-index=1 src='https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/pack-red_orig.png'>");
 							break;
 							case "green":
-								$("#showArea").append("<img src='https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/pack-yellow_orig.png'>");
+								$("#showArea").append("<img z-index=1 src='https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/pack-yellow_orig.png'>");
 							break;
 							case "maroon":
-								$("#showArea").append("<img src='https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/pack-purple_orig.png'>");
+								$("#showArea").append("<img z-index=1 src='https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/pack-purple_orig.png'>");
 							break;
 						}
 				}	
@@ -55,24 +55,21 @@
 					alert("this isn't working");
 				}
 				if($strapColor!==null){
-					alert("testing 2");
-					$("#showArea").empty();
-					$("#showArea").append("<h3>Here's your pack</h3>");
 						switch($strapColor){
 							case "black":
-								$("#showArea").append("<img src='https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/strap-black-1_orig.png'>");
+								$("#showArea2").append("<img z-index=2 src='https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/strap-black-1_orig.png'>");
 							break;
 							case "blue":
-								$("#showArea").append("<img src='https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/strap-blue_orig.png'>");
+								$("#showArea2").append("<img z-index=2 id=strappingStraps src='https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/strap-blue_orig.png'>");
 							break;
 							case "red":
-								$("#showArea").append("<img src='https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/strap-red_orig.png'>");
+								$("#showArea2").append("<img z-index=2 id=strappingStraps src='https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/strap-red_orig.png'>");
 							break;
 							case "green":
-								$("#showArea").append("<img src='https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/strap-yellow-1_orig.png'>");
+								$("#showArea2").append("<img z-index=2 id=strappingStraps src='https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/strap-yellow-1_orig.png'>");
 							break;
 							case "maroon":
-								$("#showArea").append("<img src='https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/strap-blue_orig.png'>");
+								$("#showArea2").append("<img z-index=2 id=strappingStraps src='https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/strap-blue_orig.png'>");
 						}
 				}
 			});
@@ -103,6 +100,7 @@
           </div>
             <button id="showMe">Show me my pack</button>
 		  <div id="showArea"></div>
+		  <div id="showArea2"></div>
 <!--This is where the customizer ends-->            
 		<h2>Contact Us</h2>
         <p>backpacklar@gmail.com</p>
