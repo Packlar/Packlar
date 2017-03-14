@@ -5,72 +5,72 @@
 		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
 <!--Add meta tags to help with search engines-->
 		<meta name="Packlar" content="Packlar, Customizable Backpack, Backpack, Backpacking, Student"/>
-      	<script src='https://code.jquery.com/jquery-3.1.0.min.js'></script>
-        <link href="packlarCSS.css" type="text/css" rel="stylesheet">
-      	<style>
-          body {
-          	background-image: url("http://www.publicdomainpictures.net/pictures/100000/velka/faint-car-tracks-in-desert.jpg");
-          }
-          .pack{
-          	z-index:2;
-          }
-          .straps{
-          	z-index:3;
-          }
-        </style>
+		<script src='https://code.jquery.com/jquery-3.1.0.min.js'></script>
+		<link href="packlarCSS.css" type="text/css" rel="stylesheet">
+		<style>
+        body {
+			background-image: url("http://www.publicdomainpictures.net/pictures/100000/velka/faint-car-tracks-in-desert.jpg");
+		}
+			
+		#packAttack {
+			z-index: 1;
+			position: relative;
+		}
+			
+		#strappingStraps {
+			z-index: 2;
+			position:relative;
+			bottom:480px;
+		}
+			
+		</style>
 		<script type="text/javascript">
 
 		$(document).ready(function(){
-			alert("testing 0");
 			$("#showMe").click(function(){
 				var $mainColor=$('input[name="mainColors"]:checked').val();
-				alert($mainColor);
 				var $strapColor=$('input[name="strapColors"]:checked').val();
-				alert($strapColor);
 				
 				if($mainColor!==null){
-					alert("testing 2");
+					$("#packAttack").remove();
+					$("#strappingStraps").remove();
 					$("#showArea").empty();
 					$("#showArea").append("<h3>Here's your pack</h3>");
-						switch($mainColor){
-							case "black":
-								$("#showArea").append("<img z-index=1 src='https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/pack-black_orig.png'>");
-							break;
-							case "blue":
-								$("#showArea").append("<img z-index=1 src='https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/pack-blue-1_orig.png'>");
-							break;
-							case "red":
-								$("#showArea").append("<img z-index=1 src='https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/pack-red_orig.png'>");
-							break;
-							case "green":
-								$("#showArea").append("<img z-index=1 src='https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/pack-yellow_orig.png'>");
-							break;
-							case "maroon":
-								$("#showArea").append("<img z-index=1 src='https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/pack-purple_orig.png'>");
-							break;
-						}
-				}	
-				else{
-					alert("testing 3");
-					alert("this isn't working");
+					switch($mainColor){
+						case "black":
+							$("#showArea").append("<img id='packAttack' src='https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/pack-black_orig.png'>");
+						break;
+						case "blue":
+							$("#showArea").append("<img id='packAttack' src='https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/pack-blue-1_orig.png'>");
+						break;
+						case "red":
+							$("#showArea").append("<img id='packAttack' src='https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/pack-red_orig.png'>");
+						break;
+						case "green":
+							$("#showArea").append("<img id='packAttack' src='https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/pack-yellow_orig.png'>");
+						break;
+						case "maroon":
+							$("#showArea").append("<img id='packAttack' src='https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/pack-purple_orig.png'>");
+						break;
+					}
 				}
 				if($strapColor!==null){
-						switch($strapColor){
-							case "black":
-								$("#showArea2").append("<img z-index=2 src='https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/strap-black-1_orig.png'>");
-							break;
-							case "blue":
-								$("#showArea2").append("<img z-index=2 id=strappingStraps src='https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/strap-blue_orig.png'>");
-							break;
-							case "red":
-								$("#showArea2").append("<img z-index=2 id=strappingStraps src='https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/strap-red_orig.png'>");
-							break;
-							case "green":
-								$("#showArea2").append("<img z-index=2 id=strappingStraps src='https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/strap-yellow-1_orig.png'>");
-							break;
-							case "maroon":
-								$("#showArea2").append("<img z-index=2 id=strappingStraps src='https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/strap-blue_orig.png'>");
-						}
+					switch($strapColor){
+						case "black":
+							$("#showArea2").append("<img id='strappingStraps' src='https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/strap-black-1_orig.png'>");
+						break;
+						case "blue":
+							$("#showArea2").append("<img id='strappingStraps' src='https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/strap-blue_orig.png'>");
+						break;
+						case "red":
+							$("#showArea2").append("<img id='strappingStraps' src='https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/strap-red_orig.png'>");
+						break;
+						case "yellow":
+							$("#showArea2").append("<img id='strappingStraps' src='https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/strap-yellow-1_orig.png'>");
+						break;
+						case "purple":
+							$("#showArea2").append("<img id='strappingStraps' src='https://101297598-253327713307541203.preview.editmysite.com/uploads/1/0/1/2/101297598/strap-purple_orig.png'>");
+					}
 				}
 			});
 		});
@@ -99,8 +99,10 @@
            <input type="radio" name="strapColors" value="purple" id="StrapColorPurple"><label for="StrapColorMaroon">Purple</label><br>		
           </div>
             <button id="showMe">Show me my pack</button>
-		  <div id="showArea"></div>
-		  <div id="showArea2"></div>
+		<div class="viewingArea">
+			<div id="showArea"></div>
+			<div id="showArea2"></div>
+		</div>
 <!--This is where the customizer ends-->            
 		<h2>Contact Us</h2>
         <p>backpacklar@gmail.com</p>
